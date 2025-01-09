@@ -1,7 +1,6 @@
 import networkx as nx
 import pandas as pd
 import torch_geometric as pyg
-import os #added by fleur
 
 from gnn_xai_common.datasets import BaseGraphDataset
 from gnn_xai_common.datasets.utils import default_ax, unpack_G
@@ -33,13 +32,8 @@ class CollabDataset(BaseGraphDataset):
                 "COLLAB/COLLAB_graph_labels.txt"]
 
     def download(self):
-        # Skip downloading but use downloaded version (by Fleur)
-        zip_path = f'{self.raw_dir}/COLLAB.zip'
-        if not os.path.exists(zip_path):
-            raise FileNotFoundError(f"Expected dataset ZIP file at {zip_path}.")
-        pyg.data.extract_zip(zip_path, self.raw_dir)
-        # pyg.data.download_url(self.url, self.raw_dir)
-        # pyg.data.extract_zip(f'{self.raw_dir}/COLLAB.zip', self.raw_dir)
+        pyg.data.download_url(self.url, self.raw_dir)
+        pyg.data.extract_zip(f'{self.raw_dir}/COLLAB.zip', self.raw_dir)
 
     def generate(self):
         edges = pd.read_csv(self.raw_paths[0], header=None).to_numpy(dtype=int) - 1

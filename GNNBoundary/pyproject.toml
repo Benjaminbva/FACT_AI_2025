@@ -12,7 +12,6 @@ ipython = "^8.23.0"
 gnn-xai-common = { git = "https://github.com/yolandalalala/gnn-xai-common.git", branch = "main" }
 
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
