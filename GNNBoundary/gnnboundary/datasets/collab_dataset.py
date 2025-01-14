@@ -20,7 +20,8 @@ class CollabDataset(BaseGraphDataset):
 
     def __init__(self, *,
                  name='COLLAB',
-                 url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/COLLAB.zip',
+                #  url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/COLLAB.zip',
+                url="https://www.chrsmrrs.com/graphkerneldatasets/COLLAB.zip",
                  **kwargs):
         self.url = url
         super().__init__(name=name, **kwargs)
