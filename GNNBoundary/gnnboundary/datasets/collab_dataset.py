@@ -33,6 +33,7 @@ class CollabDataset(BaseGraphDataset):
                 "COLLAB/COLLAB_graph_labels.txt"]
 
     def download(self):
+        print(self.raw_dir)
         pyg.data.download_url(self.url, self.raw_dir)
         pyg.data.extract_zip(f'{self.raw_dir}/COLLAB.zip', self.raw_dir)
 
