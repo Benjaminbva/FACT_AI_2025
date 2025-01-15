@@ -133,6 +133,13 @@ def evaluate(args):
             print(f'mean = {mean_c1.item()} std = {std_c2.item()}')
             print(f'c2 = {adjacent_pair[1]}')
             print(f'mean = {mean_c2.item()} std = {std_c2.item()}\n')
+
+            f = open(f"logs/{dataset_name}.txt", "a")
+            f.write(f'c1 = {adjacent_pair[0]}')
+            f.write(f'mean = {mean_c1.item()} std = {std_c2.item()}')
+            f.write(f'c2 = {adjacent_pair[1]}')
+            f.write(f'mean = {mean_c2.item()} std = {std_c2.item()}\n')
+            f.close()
             
 
 if __name__ == '__main__':
