@@ -31,7 +31,8 @@ class ENZYMESDataset(BaseGraphDataset):
 
     def __init__(self, *,
                  name='ENZYMES',
-                 url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/ENZYMES.zip',
+                #  url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/ENZYMES.zip',
+                url="https://www.chrsmrrs.com/graphkerneldatasets/ENZYMES.zip",
                  **kwargs):
         self.url = url
         super().__init__(name=name, **kwargs)

@@ -20,7 +20,8 @@ class CollabDataset(BaseGraphDataset):
 
     def __init__(self, *,
                  name='COLLAB',
-                 url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/COLLAB.zip',
+                #  url='https://ls11-www.cs.tu-dortmund.de/people/morris/graphkerneldatasets/COLLAB.zip',
+                url="https://www.chrsmrrs.com/graphkerneldatasets/COLLAB.zip",
                  **kwargs):
         self.url = url
         super().__init__(name=name, **kwargs)
@@ -32,6 +33,7 @@ class CollabDataset(BaseGraphDataset):
                 "COLLAB/COLLAB_graph_labels.txt"]
 
     def download(self):
+        print(self.raw_dir)
         pyg.data.download_url(self.url, self.raw_dir)
         pyg.data.extract_zip(f'{self.raw_dir}/COLLAB.zip', self.raw_dir)
 
