@@ -1,0 +1,2 @@
+on cpu: 1.22 it/s
+on gpu: 3.04 it/s
