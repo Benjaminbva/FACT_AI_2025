@@ -1,6 +1,5 @@
 from collections import defaultdict
 from itertools import combinations_with_replacement
-
 import numpy as np
 
 from .boundary_analysis import boundary_analysis

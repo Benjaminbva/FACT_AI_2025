@@ -7,7 +7,6 @@ from gnn_xai_common.datasets.utils import default_ax, unpack_G
 
 from lib.datasets.base_graph_dataset import GPUBaseGraphDataset
 
-
 class MSRCDataset(GPUBaseGraphDataset):
 
     NODE_CLS = {
@@ -38,14 +37,14 @@ class MSRCDataset(GPUBaseGraphDataset):
 
 
     GRAPH_CLS = {
-        0: 'EC1',
-        1: 'EC2',
-        2: 'EC3',
-        3: "EC4",
-        4: "EC5",
-        5: "EC6",
-        6: "EC7",
-        7: "EC8",
+        0: 'C1',
+        1: 'C2',
+        2: 'C3',
+        3: "C4",
+        4: "C5",
+        5: "C6",
+        6: "C7",
+        7: "C8",
     }
 
     def __init__(self, *,

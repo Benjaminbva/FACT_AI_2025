@@ -5,6 +5,7 @@ import torch_geometric as pyg
 from gnn_xai_common.datasets import BaseGraphDataset
 from gnn_xai_common.datasets.utils import default_ax, unpack_G
 
+from lib.datasets.base_graph_dataset import GPUBaseGraphDataset
 
 class ENZYMESDataset(BaseGraphDataset):
 

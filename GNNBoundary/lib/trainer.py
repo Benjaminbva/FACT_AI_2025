@@ -24,7 +24,8 @@ class GPUTrainer:
                  scheduler,
                  optimizer,
                  dataset,
-                 budget_penalty=None,):
+                 budget_penalty=None,
+                 min_iteration=0):
         self.device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         self.sampler = sampler
         self.discriminator = discriminator.to(self.device)
@@ -34,6 +35,7 @@ class GPUTrainer:
         self.optimizer = optimizer if isinstance(optimizer, list) else [optimizer]
         self.dataset = dataset
         self.iteration = 0
+        self.min_iteration = min_iteration
 
     def init(self):
         self.sampler.init()
@@ -75,7 +77,7 @@ class GPUTrainer:
                 min_p <= disc_out["probs"][0, classes].item() <= max_p
                 for classes, (min_p, max_p) in target_probs.items()
             ]):
-                if target_size and self.sampler.expected_m <= target_size and iteration > 500:
+                if target_size and self.sampler.expected_m <= target_size and iteration > self.min_iteration:
                     break
                 budget_penalty_weight *= w_budget_inc
             else:
@@ -209,7 +211,8 @@ class NewTrainer:
                  scheduler,
                  optimizer,
                  dataset,
-                 budget_penalty=None,):
+                 budget_penalty=None,
+                 min_iteration = 0):
         self.sampler = sampler
         self.discriminator = discriminator
         self.criterion = criterion
@@ -218,6 +221,7 @@ class NewTrainer:
         self.optimizer = optimizer if isinstance(optimizer, list) else [optimizer]
         self.dataset = dataset
         self.iteration = 0
+        self.min_iteration = min_iteration        
 
     def init(self):
         self.sampler.init()
@@ -259,7 +263,7 @@ class NewTrainer:
                 min_p <= disc_out["probs"][0, classes].item() <= max_p
                 for classes, (min_p, max_p) in target_probs.items()
             ]):
-                if target_size and self.sampler.expected_m <= target_size:
+                if target_size and self.sampler.expected_m <= target_size and iteration > self.min_iteration:
                     break
                 budget_penalty_weight *= w_budget_inc
             else:
