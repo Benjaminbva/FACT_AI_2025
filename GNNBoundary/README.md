@@ -72,23 +72,3 @@ Note: In case poetry fails to install the dependencies, you can manually install
 ```bash
 pip install -r requirements.txt
 ````
-
-## 🖼️ Demo
-![demo](figures/demo.png)
-
-## 🖊️ Citation
-If you used our code or find our work useful in your research, please consider citing:
-```
-@inproceedings{wang2024gnnboundary,
-title={{GNNB}oundary: Towards Explaining Graph Neural Networks through the Lens of Decision Boundaries},
-author={Xiaoqi Wang and Han Wei Shen},
-booktitle={The Twelfth International Conference on Learning Representations},
-year={2024},
-url={https://openreview.net/forum?id=WIzzXCVYiH}
-}
-```
-
-## 🙏 Acknowledgement
-The work  was supported in part by  the US Department of Energy SciDAC program DE-SC0021360, 
-National Science Foundation Division of Information and Intelligent Systems IIS-1955764, 
-and National Science Foundation Office of Advanced Cyberinfrastructure OAC-2112606.
