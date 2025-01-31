@@ -169,7 +169,6 @@ def get_results_2way(model, adjacent_classes, dataset_name, seeds, show_progress
                 dataset, model, mean_embeds, num_graphs, num_iter, adjacent_pair[0], adjacent_pair[1], show_progress
             )
 
-
             if tuple(adjacent_pair) in results:
                 results[tuple(adjacent_pair)] += np.array([generations["gnnboundary"][0], generations["gnnboundary"][1], 
                     generations["gnnboundary"][2], generations["gnnboundary"][3], generations["baseline"][0], 
@@ -250,7 +249,7 @@ def normalGenerate3Way(dataset, model, mean_embeds, num_graphs, num_iter, cls_1,
                                     res["mean"][cls_3], res["std"][cls_3]], 
                     "baseline": [base_res["mean"][cls_1], base_res["std"][cls_1], base_res["mean"][cls_2], 
                                 base_res["std"][cls_2], base_res["mean"][cls_3], base_res["std"][cls_3]],
-                    "converged": True
+                    "converged": False
                 }
 
 def gpuGenerate3Way(dataset, model, mean_embeds, num_graphs, num_iter, cls_1, cls_2, cls_3, show_progress):
