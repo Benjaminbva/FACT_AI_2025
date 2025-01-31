@@ -27,6 +27,9 @@ Under review as submission to TMLR
 * [link](https://drive.google.com/file/d/1O3IRF9mhL2KCCU1eVlCEdssaf6y-pq2h/view?usp=sharing) for downloading the processed datasets.
 * After downloading the datasets zip, please `unzip` it in the root folder.
 
+### Results
+* Other than in `results.ipynb`, the results can also be found in the `logs` folder.
+
 ### Environment
 Codes in this repo have been tested on `python3.10` + `pytorch2.1` + `pyg2.5`.
 
